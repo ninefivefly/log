@@ -25,7 +25,7 @@ Fatal("this is Fatal")
 Fatalf("this is %s", "Fatalf")
 ```
 
-When loggint to file.
+When logging to file.
 
 ```go
 file := NewFileLogger()
