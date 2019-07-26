@@ -50,3 +50,8 @@ func (s *Stdout) Output(lv Level, log string) {
 		s.logger.Output(4, fmt.Sprintf("%s: %s", lv.String(), log))
 	}
 }
+
+// SetLogLevel set log level
+func (s *Stdout) SetLogLevel(lv Level) {
+	s.level = lv
+}

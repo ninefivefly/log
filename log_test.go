@@ -29,6 +29,8 @@ import (
 )
 
 func TestCreateLog(t *testing.T) {
+	StdLogger().SetLogLevel(LevelWarn)
+
 	Debug("this is debug")
 	Debugf("this is %s", "debugf")
 
@@ -43,6 +45,7 @@ func TestCreateLog(t *testing.T) {
 
 	Fatal("this is Fatal")
 	Fatalf("this is %s", "Fatalf")
+
 }
 
 func TestFileLog(t *testing.T) {

@@ -83,3 +83,8 @@ func (f *FileLogger) Output(lv Level, log string) {
 func (f *FileLogger) Close() {
 	f.file.Close()
 }
+
+// SetLogLevel set log level
+func (f *FileLogger) SetLogLevel(lv Level) {
+	f.level = lv
+}

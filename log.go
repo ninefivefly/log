@@ -63,6 +63,7 @@ func (l Level) String() string {
 // Logger is
 type Logger interface {
 	Output(lv Level, log string)
+	SetLogLevel(lv Level)
 }
 
 var loggers = make(map[string]Logger)
@@ -74,6 +75,17 @@ func init() {
 // SetLogger set logger with key
 func SetLogger(key string, l Logger) {
 	loggers[key] = l
+}
+
+// StdLogger return the deafault std logger.
+func StdLogger() Logger {
+	return loggers["std"]
+}
+
+// LoadLogger load logger with key
+func LoadLogger(key string) (find bool, l Logger) {
+	l, find = loggers[key]
+	return
 }
 
 // Debug create debug log
